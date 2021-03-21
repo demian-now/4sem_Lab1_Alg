@@ -23,7 +23,6 @@ public:
 	void reverse();
 
 private:
-
 	struct Node
 	{
 		Type data;

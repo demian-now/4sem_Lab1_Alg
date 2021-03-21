@@ -144,7 +144,6 @@
     <ClCompile Include="RBTree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="List.h" />
     <ClInclude Include="RBTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

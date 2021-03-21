@@ -1,4 +1,6 @@
 #pragma once
+#include "List.h"
+#include "List.cpp"
 #define NULL 0
 
 enum Color {RED, BLACK};
@@ -23,12 +25,14 @@ private:
 
 	Node* root;
 	Node* nil;
-	int size;
+	size_t size;
 
 	void recovery(Node*);
 	void leftRotate(Node*);
 	void rightRotate(Node*);
-	void recoveryRemove(Node* x);
+	void recoveryRemove(Node*);
+	
+	void iterator(Node* actual, BiList<Key_Type>* keys, BiList<Value_Type>* values);
 
 public:
 
@@ -39,8 +43,8 @@ public:
 	void remove(Key_Type);
 	Value_Type find(Key_Type);
 	void clear(); 
-	Key_Type* get_keys();
-	Value_Type* get_values();
+	BiList<Key_Type>* get_keys();
+	BiList<Value_Type>* get_values();
 	void print();
-	int get_size();
+	size_t get_size();
 };
