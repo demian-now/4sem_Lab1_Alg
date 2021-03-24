@@ -1,0 +1,5 @@
+﻿  pch.cpp
+  UnitRBTreeTest.cpp
+C:\Users\fastf\Desktop\ПРОГА\4 семестр\АиСД\UnitRBTreeTest\UnitRBTreeTest.cpp(223,23): warning C4101: error: неиспользованная локальная переменная
+     Создается библиотека C:\Users\fastf\Desktop\ПРОГА\4 семестр\АиСД\Lab1\Debug\UnitRBTreeTest.lib и объект C:\Users\fastf\Desktop\ПРОГА\4 семестр\АиСД\Lab1\Debug\UnitRBTreeTest.exp
+  UnitRBTreeTest.vcxproj -> C:\Users\fastf\Desktop\ПРОГА\4 семестр\АиСД\Lab1\Debug\UnitRBTreeTest.dll

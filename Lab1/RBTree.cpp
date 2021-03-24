@@ -172,7 +172,7 @@ void RedBlackTree<Key_Type, Value_Type>::recoveryRemove(Node* x_Node)
 				if (brother->right->COLOR == BLACK) 
 				{
 					brother->left->COLOR = BLACK;
-					brother->COLOR = 0;
+					brother->COLOR = RED;
 					rightRotate(brother);
 					brother = x_Node->parent->right;
 				}
@@ -223,7 +223,10 @@ void RedBlackTree<Key_Type, Value_Type>::recoveryRemove(Node* x_Node)
 template<class Key_Type, class Value_Type>
 RedBlackTree<Key_Type, Value_Type>::RedBlackTree()
 {
-	nil = new Node(0, 0, NULL, NULL, NULL, BLACK);
+	if(typeid(Value_Type).name() == typeid(string).name())
+		nil = new Node(0, " ", NULL, NULL, NULL, BLACK);
+	else
+		nil = new Node(0, 0, NULL, NULL, NULL, BLACK);
 	root = nil;
 	size = 0;
 }
@@ -234,7 +237,6 @@ template<class Key_Type, class Value_Type>
 RedBlackTree<Key_Type, Value_Type>::~RedBlackTree()
 {
 	clear(); 
-	delete root;
 }
 
 //вставка нового узла
@@ -410,7 +412,8 @@ void RedBlackTree<Key_Type, Value_Type>::iterator(Node* actual, BiList<Key_Type>
 template<class Key_Type, class Value_Type>
 void RedBlackTree<Key_Type, Value_Type>::clear()
 {
-	
+	while (root != nil)
+		remove(root->Key);
 }
 
 template<class Key_Type, class Value_Type>
