@@ -389,22 +389,22 @@ Value_Type RedBlackTree<Key_Type, Value_Type>::find(Key_Type Key)
 }
 
 template<class Key_Type, class Value_Type>
-void RedBlackTree<Key_Type, Value_Type>::iterator(Node* actual, BiList<Key_Type> *keys, BiList<Value_Type> *values)
+void RedBlackTree<Key_Type, Value_Type>::iteration_over(Node* actual, BiList<Key_Type> *keys, BiList<Value_Type> *values)
 {
 	if (keys == NULL)
 	{
 		if (actual->left!=nil)
-			iterator(actual->left, NULL, values);
+			iteration_over(actual->left, NULL, values);
 		if (actual->right!=nil)
-			iterator(actual->right, NULL, values);
+			iteration_over(actual->right, NULL, values);
 		values->push_back(actual->Value);
 	}
 	else
 	{
 		if (actual->left!=nil)
-			iterator(actual->left, keys, NULL);
+			iteration_over(actual->left, keys, NULL);
 		if (actual->right!=nil)
-			iterator(actual->right, keys, NULL);
+			iteration_over(actual->right, keys, NULL);
 		keys->push_back(actual->Key);
 	}
 }
@@ -420,7 +420,7 @@ template<class Key_Type, class Value_Type>
 BiList<Key_Type>* RedBlackTree<Key_Type, Value_Type>::get_keys()
 {
 	BiList<Key_Type>* result = new BiList<Key_Type>;
-	iterator(root, result, NULL);
+	iteration_over(root, result, NULL);
 	return result;
 }
 
@@ -428,7 +428,7 @@ template<class Key_Type, class Value_Type>
 BiList<Value_Type>* RedBlackTree<Key_Type, Value_Type>::get_values()
 {
 	BiList<Value_Type>* result = new BiList<Value_Type>;
-	iterator(root, NULL, result);
+	iteration_over(root, NULL, result);
 	return result;
 }
 

@@ -32,7 +32,7 @@ private:
 	void rightRotate(Node*);
 	void recoveryRemove(Node*);
 	
-	void iterator(Node* actual, BiList<Key_Type>* keys, BiList<Value_Type>* values);
+	void iteration_over(Node* actual, BiList<Key_Type>* keys, BiList<Value_Type>* values);
 
 public:
 
